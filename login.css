@@ -14,7 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 94%;
-    width: 25vw;
+    max-width:400px;
         animation: Fade 1s ease both;
 
     margin-top: 80px;
@@ -251,3 +251,33 @@ input:focus::placeholder{
 
 /*responsive*/
 
+@media (max-width: 768px) {
+.login{
+    margin-top: 120px;
+    max-width: 85%;
+}
+     label{
+        font-size: x-large;
+    }
+
+    input{
+        font-size: small;
+        padding: 2px 2px;
+    }
+    input{
+
+    font-size: small;
+    
+}
+
+#logincard input{
+    width: 95%;
+    padding: 8px;
+
+    border: 1px solid rgba(75,15,26,0.4);
+    border-radius: 6px;
+
+    outline: none;
+}
+
+}
