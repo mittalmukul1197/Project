@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramuli Luxury hotel</title>
+    <link rel="shortcut icon" href="images/alphabet logo crop.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="register.css">
+    <style>
+        .nv-login a {
+            background-image: none;
+            border: 1px solid goldenrod;
+            color: gold;
+        }
+
+        /* Extra spacing */
+        .login {
+            height: auto;
+            padding-top: 40px;
+        }
+
+        #logincard {
+            height: auto;
+        }
+
+        /* Login link */
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .login-link a {
+            color: rgb(75, 15, 26);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            color: gold;
+        }
+
+
+        .nv-login a {
+            background-image: none;
+            border: 1px solid goldenrod;
+            color: gold;
+        }
+
+        .nv-login a:hover {
+            background-image: none;
+            border: 1px solid goldenrod;
+            color: gold;
+        }
+    </style>
+</head>
+
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logoname">
+            <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg"></a>
+        </div>
+
+
+
+
+        <div class="navtitle">
+            <div class="nv-home"> <a href="index.html">Home</a> </div>
+            <div class="nv-Services"><a href="services.html">Services</a> </div>
+            <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
+            <div class="nv-contact"> <a href="contact.html"> Contact</a> </div>
+            <div class="nv-about"> <a href="About.html"> About</a> </div>
+            <div class="nv-login"> <a href="login.html">Sign in</a> </div>
+
+        </div>
+    </nav>
+
+    <!-- REGISTER FORM -->
+    <!-- <div class="login"> -->
+
+    <!-- <form id="logincard"> -->
+    <!-- 
+    <label>Create Account</label>
+    <label for="name">Full name</label>
+    <input type="text" placeholder="Full Name"  id="name" required>
+    <label for="">gender</label>
+    <div><div><label for="female">Female</label><input type="radio" name="gender" id="female"  value ="female"></div><label for="male">Male</label><input type="radio" name="gender" id="male"></div>
+    <label for="email">Email</label>
+    <input type="email" placeholder="Email" id=" email" required>
+    <label for="contact">Mobile number</label>
+    <input type="text" placeholder="Mobile Number" id="contact" required>
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" id="passowrd" required>
+    <label for="confrpassword">Confirm Password</label>
+    <input type="password" placeholder="Confirm Password" id="confrpassword" required>
+
+    <div class="loginbtn">
+        <button class="btn" type="submit">Register</button>
+    </div>
+
+    <div class="login-link">
+        Already have an account? 
+        <a href="login.html">Login →</a>
+    </div>
+
+</form> -->
+    <form class="register-card">
+
+        <h2>Create Account</h2>
+        <div id="regname">
+            <div>
+                <label for="name">First Name</label>
+                <input type="text" placeholder="First Name" required>
+            </div>
+            <div>
+                <label for="lastname">Last Name</label>
+                <input type="text" placeholder="Last Name">
+            </div>
+        </div>
+        <div id="regcontact">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div>
+                <label for="number">Contact Number</label>
+                <input type="text" placeholder="Phone Number" required>
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <br>
+        <div class="gender-box">
+            <label>Gender:</label>
+            <div class="gender-options">
+                <label><input type="radio" name="gender" class="selgender"> Male</label>
+                <label><input type="radio" name="gender" class="selgender"> Female</label>
+            </div>
+        </div>
+
+
+
+        <!-- Password -->
+        <div class="password-box">
+            <div><label for="">Password</label>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <div><label for="">Confirm password</label>
+                <input type="password" placeholder="Confirm Password" required>
+            </div>
+        </div>
+        <!-- Referral -->
+        <div class="referralcodebox">
+            <input type="text" placeholder="Referral Code (Optional)">
+        </div>
+        <!-- Terms -->
+        <div class="terms">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to Terms & Conditions</label>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <p class="login-link">
+            Already have an account?
+            <a href="login.html">Sign In </a>
+        </p>
+
+    </form>
+    </div>
+
+</body>
+<footer class="footer">
+    <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
+</footer>
+
+</html>

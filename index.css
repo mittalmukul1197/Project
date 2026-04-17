@@ -1,0 +1,505 @@
+body {
+
+    background-color: rgb(253, 247, 235);
+    margin: 0%;
+    padding: 0%;
+    overflow-x: hidden;
+
+}
+
+nav {
+    display: flex;
+    height: 6vh;
+    width: 100%;
+    align-self: center;
+    justify-content: space-between;
+    padding: 20px;
+    /* background-color: rgba(43, 1, 14, 0.895); */
+    background-color: rgb(75, 15, 26);
+
+    /* background-image: radial-gradient(circle rgb(176, 57, 79) rgb(75,15,26) ); */
+    /* box-shadow: 0px 50px 90px   rgba(43, 1, 14, 0.895); // rgba(175, 144, 6, 0.895) */
+    box-shadow: 0px 0px 30px rgb(75, 15, 26);
+    position: fixed;
+    z-index: 1;
+    margin-top: 0%;
+
+
+
+}
+
+/* --building logo-- */
+#logoalph {
+    height: 100%;
+    width: 30%;
+}
+
+/* -- name logo-- */
+.nameimg {
+    width: 60%;
+    height: 100%;
+}
+
+.logoname {
+
+
+    color: goldenrod;
+
+}
+
+.navtitle {
+    display: flex;
+    color: goldenrod;
+    gap: 30px;
+}
+
+.hotelname {
+    display: flex;
+    direction: column;
+
+}
+
+.first {
+
+    font-family: 'Montserrat';
+}
+
+.navtitle a {
+
+    color: rgb(212, 175, 55);
+    text-decoration: none;
+}
+
+.navtitle a:hover {
+    color: rgb(248, 205, 32);
+    padding-bottom: 2px;
+
+
+    transition-duration: 0.1s;
+}
+
+.navlogin a {
+
+    color: rgb(212, 175, 55);
+    text-decoration: none;
+}
+
+
+.navlogin a:hover{
+    color: rgb(248, 205, 32);
+    padding-bottom: 2px;
+
+
+    transition-duration: 0.1s;
+
+}
+
+.taghome {
+    background-image: url(images/fornt_morning.png);
+    height: 85vh;
+    margin-top: 40px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(212, 175, 55);
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes floaa {
+    from {
+        transform: none;
+    }
+
+    to {
+        text-shadow: 0px 0px 1px rgb(182, 211, 20);
+
+    }
+}
+
+@keyframes Fade {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.taghome {
+    animation: Fade 1s ease both;
+}
+
+.welcome {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 40px;
+    animation: floaa 0.8s ease-in-out infinite alternate;
+    animation: Fade 0.8s ease forwards;
+
+}
+
+
+.tag {
+    background-image: url(images/blur\ bg.png);
+    width: 100%;
+    height: 55vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(212, 175, 55);
+    animation: Fade 0.7s ease forwards;
+}
+
+
+.welcome::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffc107;
+    margin: auto;
+    margin-top: 2px;
+
+}
+
+
+[class^="nv"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    font-size: x-large;
+}
+
+
+
+@keyframes floa {
+    from {
+        transform: none;
+    }
+
+    to {
+        transform: translateY(10px);
+
+    }
+}
+
+.tag .txt {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 40px;
+    /* animation-direction: alternate;
+    animation-name: floa;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: ease; */
+
+    animation: floa 1.5s ease-in-out infinite alternate;
+}
+
+.tag .txt::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffc107;
+
+    margin: auto;
+    margin-top: 2px;
+
+}
+
+.nv-login a {
+    background: radial-gradient(circle,
+            rgba(232, 230, 120, 0.906),
+            rgba(222, 183, 10, 0.973));
+    padding: 2px 4px;
+    border-radius: 5px;
+    color: rgb(140, 13, 13);
+}
+
+.nv-login a:hover {
+
+    color: rgb(140, 13, 13);
+    transform: scale3d(1.02, 1.02, 1);
+    transition-duration: 0.1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.hmrooms-container {
+    display: flex;
+    gap: 30px;
+    padding: 10px 15px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hmroomcard-container {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    padding: 10px 15px;
+    height: 80%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hmroom-card {
+    width: 300px;
+
+    border-radius: 10px;
+    background-color: rgb(253, 253, 253);
+    border: 2px solid black;
+    overflow: hidden;
+    box-shadow: 2px 0px 10px rgba(89, 5, 5, 0.848);
+}
+
+.hmroom-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    object-fit: cover;
+
+}
+
+.viewbtn {
+    display: flex;
+
+
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: radial-gradient(circle,
+            rgba(120, 6, 6, 0.7),
+            rgb(110, 3, 3));
+    text-align: center;
+    box-shadow: 2px 0px 10px rgb(249, 222, 50);
+    border: none;
+    text-decoration: none;
+    color: rgb(227, 213, 18);
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.hmroom-card:hover {
+    transform: scale(1.07);
+
+    transition-duration: 0.2s;
+    box-shadow: 2px 0px 10px rgb(249, 222, 50);
+
+}
+
+.viewbtn:hover {
+    transform: translateX(10px);
+
+    transition-duration: 0.3s;
+    background: radial-gradient(circle,
+            rgba(238, 238, 96, 0.918),
+            rgb(229, 201, 16));
+    text-decoration: none;
+    color: rgb(137, 11, 11);
+    font-size: large;
+    font-weight: bold;
+
+    box-shadow: 2px 0px 10px rgb(120, 6, 6);
+}
+
+
+.hmrooms-container h1 {
+    color: rgb(109, 5, 5);
+    text-shadow: 0px 0px 10px #ffc107;
+}
+
+
+
+
+
+.hmservices h1 {
+    color: rgb(109, 5, 5);
+    text-shadow: 0px 0px 10px #ffc107;
+}
+
+.hmservices {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hmfac {
+
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+
+    gap: 25px;
+    justify-content: center;
+}
+
+.hmcardfac {
+    width: 23%;
+    height: 100%;
+    border: 2px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(75, 15, 26, 0.697);
+
+}
+
+.hmfactag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(75, 15, 26);
+    font-style: normal;
+    text-shadow: 0px 0px 5px rgba(163, 139, 19, 0.627);
+    align-self: center;
+    height: 20%;
+    font-size: large;
+}
+
+.hmcardfac .img {
+    display: block;
+    width: 100%;
+    height: 80%;
+
+}
+
+.hmcardfac:hover {
+    transform: scale(1.09);
+    transition-duration: 0.1s;
+    box-shadow: 2px 0px 10px rgb(249, 222, 50);
+
+
+}
+
+.img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    border-top: 1px solid black;
+    box-shadow: 0px -2px 15px rgba(75, 15, 26, 0.697);
+}
+
+.viewfacbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: rgb(75, 15, 26);
+    color: rgb(212, 175, 55);
+    padding: 40px 20px 10px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: gold;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    color: rgb(212, 175, 55);
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    color: rgb(248, 205, 32);
+}
+
+.socials {
+    display: flex;
+
+}
+
+.socials a {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.socials a img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.519);
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.socials a img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.socials a img:hover {
+    transform: scale(1.02);
+}

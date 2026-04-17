@@ -1,0 +1,28 @@
+.brief{
+    
+    padding: 5%;
+    font-size: x-large;
+    color: rgba(40,40,40);
+    text-align: center;
+}
+.brief::before{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    border-radius: 5px;
+    background: #ffc107; 
+    margin: auto;
+    margin-bottom: 2px;
+}
+.footer{
+    text-align: center;
+    border-top: 1px solid rgba(212,175,55,0.3);
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 13px;
+}
+.brief{
+        animation: Fade 1s ease both;
+
+}
