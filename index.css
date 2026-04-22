@@ -1,10 +1,12 @@
 body {
-
     background-color: rgb(253, 247, 235);
     margin: 0%;
     padding: 0%;
     overflow-x: hidden;
+}
 
+.navbarm{
+    display: none;
 }
 
 nav {
@@ -16,16 +18,12 @@ nav {
     padding: 20px;
     /* background-color: rgba(43, 1, 14, 0.895); */
     background-color: rgb(75, 15, 26);
-
     /* background-image: radial-gradient(circle rgb(176, 57, 79) rgb(75,15,26) ); */
     /* box-shadow: 0px 50px 90px   rgba(43, 1, 14, 0.895); // rgba(175, 144, 6, 0.895) */
     box-shadow: 0px 0px 30px rgb(75, 15, 26);
     position: fixed;
     z-index: 1;
     margin-top: 0%;
-
-
-
 }
 
 /* --building logo-- */
@@ -41,10 +39,7 @@ nav {
 }
 
 .logoname {
-
-
     color: goldenrod;
-
 }
 
 .navtitle {
@@ -56,16 +51,13 @@ nav {
 .hotelname {
     display: flex;
     direction: column;
-
 }
 
 .first {
-
     font-family: 'Montserrat';
 }
 
 .navtitle a {
-
     color: rgb(212, 175, 55);
     text-decoration: none;
 }
@@ -73,13 +65,10 @@ nav {
 .navtitle a:hover {
     color: rgb(248, 205, 32);
     padding-bottom: 2px;
-
-
     transition-duration: 0.1s;
 }
 
 .navlogin a {
-
     color: rgb(212, 175, 55);
     text-decoration: none;
 }
@@ -88,10 +77,14 @@ nav {
 .navlogin a:hover{
     color: rgb(248, 205, 32);
     padding-bottom: 2px;
-
-
     transition-duration: 0.1s;
 
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .taghome {
@@ -104,6 +97,116 @@ nav {
     justify-content: center;
     color: rgb(212, 175, 55);
 }
+
+
+
+
+
+    
+
+@media (max-width:768px) {
+    
+    
+
+.navtitle {
+        right: 0;
+        position: fixed;
+        top: 0;
+        display: flex;
+        right: -100%;
+        height: 100vh;
+        width: 70vw;
+        max-width: 250px;
+        background-color: rgba(75, 15, 26, 0.723);
+        backdrop-filter: blur(5px);
+        padding-top: 14vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        transition: 0.3s;
+        z-index: -1;
+    }
+
+    
+    
+.navtitle.active{
+    right: 0;
+    z-index: -1;
+}   
+
+    .navbarm{
+        
+    display: flex;
+    height: 6vh;
+   max-width: 100%;
+    align-self: center;
+    justify-content: space-between;
+    padding: 20px;
+    /* background-color: rgba(43, 1, 14, 0.895); */
+    background-color: rgb(75, 15, 26);
+    
+    /* background-image: radial-gradient(circle rgb(176, 57, 79) rgb(75,15,26) ); */
+    /* box-shadow: 0px 50px 90px   rgba(43, 1, 14, 0.895); // rgba(175, 144, 6, 0.895) */
+    box-shadow: 0px 0px 30px rgb(75, 15, 26);
+    position: fixed;
+    z-index: 1;
+    margin-top: 0%;
+    }
+    .menu-toggle{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .menum{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-right: 10px;
+    }
+    .menu-toggle div{
+    width: 30px;
+    height: 3px;
+    background: radial-gradient(
+        circle,
+        rgba(250, 250, 11, 0.918),
+        rgb(207, 186, 49)
+    );
+    border-radius: 5px;
+    }
+    [class^="line"]{
+        color: #ffc107;
+        width: 30px;
+        height: 10px;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    .menu-toggle {
+        display: flex;
+    }
+    .navlogin a {
+        font-size: large;
+    }
+    .logoname {
+    margin-left: 5px;
+}
+
+    .taghome {
+        height: 70vh;              
+        margin-top: 20px;          
+        background-position: center;
+        /* background-size: contain;  */
+        background-size: 190%;
+        background-repeat: no-repeat;
+    }
+
+}
+
 
 
 body {
@@ -143,10 +246,12 @@ body {
     padding: 15px 40px;
     border-radius: 10px;
     font-size: 40px;
+    backdrop-filter: blur(5px);
     animation: floaa 0.8s ease-in-out infinite alternate;
     animation: Fade 0.8s ease forwards;
 
 }
+
 
 
 .tag {
@@ -171,9 +276,25 @@ body {
     background: #ffc107;
     margin: auto;
     margin-top: 2px;
-
+    
 }
 
+@media (max-width:768px) {
+
+    .welcome{
+        padding: 15px 25px;
+
+    font-size:25px ;
+    }
+    .tag{
+        
+        background-size: 190%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 70vh;              
+        margin-top: 20px;  
+    }
+}
 
 [class^="nv"] {
     display: flex;
@@ -388,14 +509,18 @@ body {
     align-self: center;
     height: 20%;
     font-size: large;
+    
 }
 
 .hmcardfac .img {
     display: block;
     width: 100%;
     height: 80%;
+    
+    
 
 }
+
 
 .hmcardfac:hover {
     transform: scale(1.09);
@@ -411,6 +536,7 @@ body {
     border-radius: 15px;
     border-top: 1px solid black;
     box-shadow: 0px -2px 15px rgba(75, 15, 26, 0.697);
+/* object-fit: cover; */
 }
 
 .viewfacbtn {
@@ -419,7 +545,20 @@ body {
     justify-content: center;
 }
 
+@media (max-width:768px){
+    .hmfac{
+    display: flex;
+   height:max-content;
+    flex-direction: column;
+    
+    }
 
+    .hmcardfac{
+    width: 300px;
+    height: fit-content;
+    gap: 2px;
+        }
+}
 
 
 

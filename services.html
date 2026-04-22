@@ -12,6 +12,7 @@
     <style>
         .nv-Services {
             border-bottom: 2px solid yellow;
+            border-radius: 6px;
         }
 
         .nv-Services a {
@@ -30,12 +31,43 @@
             <div class="nv-home"> <a href="index.html">Home</a> </div>
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
+            <div class="nv-destination"> <a href="destinations.html">Destination</a> </div>
+    
             <div class="nv-contact"> <a href="contact.html"> Contact</a> </div>
             <div class="nv-about"> <a href="About.html"> About</a> </div>
+        </div>
+        <div class="navlogin">
             <div class="nv-login"> <a href="login.html">Sign in</a> </div>
-
         </div>
     </nav>
+    
+    
+    <nav class="navbarm">
+        <div class="logoname">
+            <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg"></a>
+        </div>
+        <div class="menum">
+            <div class="navlogin">
+                <div class="nv-login"> <a href="login.html">Sign in</a> </div>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="navtitle" id="sidebar"> 
+            <div class="nv-home"> <a href="index.html">Home</a> </div>
+            <div class="nv-Services"><a href="services.html">Services</a> </div>
+            <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
+                        <div class="nv-destination"> <a href="destinations.html">Destinations</a> </div>
+
+            <div class="nv-contact"> <a href="contact.html">Contact</a> </div>
+            <div class="nv-about"> <a href="About.html"> About</a> </div>
+        </div>
+    </nav>
+
     <br>
 
     <div class="tag">
@@ -81,5 +113,6 @@
     <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
 
 </footer>
+ <script src="index.js"></script>
 
 </html>

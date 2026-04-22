@@ -20,26 +20,53 @@
 </head>
 
 
-<nav class="nav">
-    <div class="logoname">
-        <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
-            <img src="images/hotel_name.png" class="nameimg"></a>
+
+<body>
+    <nav class="nav">
+        <div class="logoname">
+            <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg"></a>
         </div>
         <div class="navtitle">
             <div class="nv-home"> <a href="index.html">Home</a> </div>
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
             <div class="nv-destination"> <a href="destinations.html">Destination</a> </div>
-            
+    
             <div class="nv-contact"> <a href="contact.html"> Contact</a> </div>
             <div class="nv-about"> <a href="About.html"> About</a> </div>
         </div>
         <div class="navlogin">
             <div class="nv-login"> <a href="login.html">Sign in</a> </div>
-            
         </div>
     </nav>
-<body>
+    
+    
+    <nav class="navbarm">
+        <div class="logoname">
+            <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg"></a>
+        </div>
+        <div class="menum">
+            <div class="navlogin">
+                <div class="nv-login"> <a href="login.html">Sign in</a> </div>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="navtitle" id="sidebar"> 
+            <div class="nv-home"> <a href="index.html">Home</a> </div>
+            <div class="nv-Services"><a href="services.html">Services</a> </div>
+            <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
+                        <div class="nv-destination"> <a href="destinations.html">Destinations</a> </div>
+
+            <div class="nv-contact"> <a href="contact.html">Contact</a> </div>
+            <div class="nv-about"> <a href="About.html"> About</a> </div>
+        </div>
+    </nav>
 
     <div class="taghome">
         <div class="welcome">Welcome to our hotel </div>
@@ -53,13 +80,11 @@
                 <h3>Luxury Suite</h3>
                 <p>Spacious suite with premium services.</p>
             </div>
-
             <div class="hmroom-card">
                 <img src="images/buisness.avif" alt="">
                 <h3>Executive Room</h3>
                 <p>Perfect for business travelers.</p>
             </div>
-
             <div class="hmroom-card">
                 <img src="images/family.avif" alt="">
                 <h3>Family Room</h3>
@@ -69,7 +94,6 @@
                 <a href="rooms.html" class="viewbtn">View More</a>
             </div>
         </div>
-
     </div>
 
     <div class="hmservices">
@@ -92,6 +116,7 @@
             </div>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 <footer class="footer">
     <div class="footer-container">
@@ -132,10 +157,9 @@
     </div>
 
     <div class="footer-bottom">
-    <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
+        <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
 
     </div>
 </footer>
-
+ <script src="index.js"></script>
 </html>
-

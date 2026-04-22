@@ -64,50 +64,49 @@
             <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
                 <img src="images/hotel_name.png" class="nameimg"></a>
         </div>
-
-
-
-
         <div class="navtitle">
             <div class="nv-home"> <a href="index.html">Home</a> </div>
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
+            <div class="nv-destination"> <a href="destinations.html">Destination</a> </div>
+    
             <div class="nv-contact"> <a href="contact.html"> Contact</a> </div>
             <div class="nv-about"> <a href="About.html"> About</a> </div>
+        </div>
+        <div class="navlogin">
             <div class="nv-login"> <a href="login.html">Sign in</a> </div>
+        </div>
+    </nav>
+    
+    
+    <nav class="navbarm">
+        <div class="logoname">
+            <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg"></a>
+        </div>
+        <div class="menum">
+            <div class="navlogin">
+                <div class="nv-login"> <a href="login.html">Sign in</a> </div>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="navtitle" id="sidebar"> 
+            <div class="nv-home"> <a href="index.html">Home</a> </div>
+            <div class="nv-Services"><a href="services.html">Services</a> </div>
+            <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
+                        <div class="nv-destination"> <a href="destinations.html">Destinations</a> </div>
 
+            <div class="nv-contact"> <a href="contact.html">Contact</a> </div>
+            <div class="nv-about"> <a href="About.html"> About</a> </div>
         </div>
     </nav>
 
-    <!-- REGISTER FORM -->
-    <!-- <div class="login"> -->
 
-    <!-- <form id="logincard"> -->
-    <!-- 
-    <label>Create Account</label>
-    <label for="name">Full name</label>
-    <input type="text" placeholder="Full Name"  id="name" required>
-    <label for="">gender</label>
-    <div><div><label for="female">Female</label><input type="radio" name="gender" id="female"  value ="female"></div><label for="male">Male</label><input type="radio" name="gender" id="male"></div>
-    <label for="email">Email</label>
-    <input type="email" placeholder="Email" id=" email" required>
-    <label for="contact">Mobile number</label>
-    <input type="text" placeholder="Mobile Number" id="contact" required>
-    <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="passowrd" required>
-    <label for="confrpassword">Confirm Password</label>
-    <input type="password" placeholder="Confirm Password" id="confrpassword" required>
-
-    <div class="loginbtn">
-        <button class="btn" type="submit">Register</button>
-    </div>
-
-    <div class="login-link">
-        Already have an account? 
-        <a href="login.html">Login →</a>
-    </div>
-
-</form> -->
+    
     <form class="register-card">
 
         <h2>Create Account</h2>
@@ -171,11 +170,13 @@
         </p>
 
     </form>
+
     </div>
 
+    <footer class="footer">
+        <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
+    </footer>
+     <script src="index.js"></script>
 </body>
-<footer class="footer">
-    <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
-</footer>
 
 </html>
