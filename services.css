@@ -76,3 +76,12 @@ box-shadow: 0px -2px 15px  rgba(75, 15, 26, 0.697);
         animation: Fade 1s ease both;
 
 }
+
+
+body.dark .factag{
+    color: rgb(204, 176, 14);
+}
+
+body.dark .img{
+    filter: brightness(0.8);
+}
