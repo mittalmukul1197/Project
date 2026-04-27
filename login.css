@@ -229,3 +229,17 @@ input:focus::placeholder{
 
 }
 
+
+
+
+
+
+body.dark #option::after,
+        body.dark #option::before{
+    background: azure;
+    }
+
+    body.dark .nv-login a{
+            color: gold;
+        }
+        

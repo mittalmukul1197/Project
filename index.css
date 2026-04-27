@@ -108,13 +108,16 @@ nav {
 
 .taghome {
     background-image: url(images/fornt_morning.png);
-    height: 85vh;
+    height: 100vh;
     margin-top: 40px;
     background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(212, 175, 55);
+    color: rgb(199, 169, 70);
+    text-shadow:0px 0px 9px #b0880fe7;
+    /* outline: 2px blue;     */
+
 }
 
 
@@ -262,15 +265,34 @@ body {
     animation: Fade 1s ease both;
 }
 
+.taghome::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(55,8,18,0.42) 0%, rgba(55,8,18,0.68) 100%);
+}
+
 .welcome {
-    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: rgba(0, 0, 0, 0.8); */
     padding: 15px 40px;
+    text-align: center;
+    /* align-self: center; */
     border-radius: 10px;
-    font-size: 40px;
-    backdrop-filter: blur(5px);
+    font-size: 60px;
+    font-weight: 500;
+    
+    font-family: Georgia, serif,cursive;
+    /* backdrop-filter: blur(5px); */
     animation: floaa 0.8s ease-in-out infinite alternate;
     animation: Fade 0.8s ease forwards;
 
+}
+.welcome span {
+    font-weight: 100;
+    opacity:0.9;
+    letter-spacing: 10px;
+    font-size: x-large;
+    font-style: italic;
 }
 
 
@@ -292,9 +314,10 @@ body {
     content: "";
     display: block;
     width: 70px;
-    height: 4px;
+    height: 7px;
     border-radius: 50%;
-    background: #ffc107;
+    /* background: #ffc107; */
+    background-image: linear-gradient(rgb(214, 202, 135),rgb(109, 82, 14));
     margin: auto;
     margin-top: 2px;
     
@@ -679,7 +702,7 @@ body {
         align-items: center;
         padding-bottom: 20px;
     }
-    .hmcardfac { width: 400px; height: 250px; 
+    .hmcardfac { width: 80%; 
     }
 
     /* Room cards — full width on mobile */
@@ -769,24 +792,24 @@ body {
     transform: scale(1.02);
 }
 
-/* .slideshowBox{
-    display: flex;
-
+#scrollbtn{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+    width: 40px ;
+    height: 40px;
+justify-content: center;
+align-items: center;
+    border-radius:50% ;
+    display: none;
+    font-size: x-large;
+    text-align: center;
+    color: rgb(242, 208, 13);
+    background-color: #350202cd;
+    border: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px #350202;
 }
-.slide{
-    display: flex;
-} */
-
-/* =========responsive ===============*/
-
-/* @media (max-width:768px){
-.slideshow{
-    flex-wrap: nowrap;
-    height: max-content;
-    width: 20px;
-}
-
-} */
 
 
 
@@ -806,9 +829,12 @@ body.dark .navbarm {
     box-shadow: 0px 0px 20px black;
 }
 
-body.dark .navtitle a,
-body.dark .navlogin a {
+body.dark .navtitle a {
     color: gold;
+}
+
+body.dark .navlogin a{
+    color: #350202;
 }
 
 /* Hero  */
@@ -849,16 +875,34 @@ body.dark .contact-form {
 
 body.dark .contact-form input,
 body.dark .contact-form textarea {
-    background-color: #2a2a2a;
+    background-color: #420202;
     color: white;
     border: 1px solid #555;
 }
 
 /* Login & Register */
 body.dark #logincard,
-body.dark .register-card {
-    background-color: #1e1e1e;
+body.dark .register-card label,
+body.dark .register-card{
+    background-color: #460303;
+    color: rgba(253, 191, 47, 0.948);
+}
+
+body.dark .login-link a{
+    color:rgb(250, 228, 172);
+}
+
+
+
+body.dark #logincard input,
+body.dark .register-card input{
+    background-color: #350202;
     color: white;
+
+}
+body.dark #logincard ::placeholder,
+body.dark .register-card ::placeholder{
+    color: rgba(245, 245, 245, 0.71);
 }
 
 body.dark input {
@@ -909,4 +953,14 @@ body.dark h3 {
 
 body {
     transition: background-color 0.4s ease, color 0.4s ease;
+}
+body.dark .taghome::before{
+    display: none;
+}
+body.dark .taghome{
+    backdrop-filter: opacity(0.1);
+}
+body.dark .welcome{
+    text-shadow: 0px 0px 6px black;
+    color: #fde767;
 }

@@ -53,6 +53,10 @@
             border: 1px solid goldenrod;
             color: gold;
         }
+
+        body.dark .nv-login a {
+            color: gold;
+        }
     </style>
 </head>
 
@@ -69,7 +73,7 @@
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
             <div class="nv-destination"> <a href="destinations.html">Destination</a> </div>
-    
+
             <div class="nv-contact"> <a href="contact.html"> Contact</a> </div>
             <div class="nv-about"> <a href="About.html"> About</a> </div>
         </div>
@@ -77,8 +81,8 @@
             <div class="nv-login"> <a href="login.html">Sign in</a> </div>
         </div>
     </nav>
-    
-    
+
+
     <nav class="navbarm">
         <div class="logoname">
             <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
@@ -94,11 +98,11 @@
                 <div class="line3"></div>
             </div>
         </div>
-        <div class="navtitle" id="sidebar"> 
+        <div class="navtitle" id="sidebar">
             <div class="nv-home"> <a href="index.html">Home</a> </div>
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
-                        <div class="nv-destination"> <a href="destinations.html">Destinations</a> </div>
+            <div class="nv-destination"> <a href="destinations.html">Destinations</a> </div>
 
             <div class="nv-contact"> <a href="contact.html">Contact</a> </div>
             <div class="nv-about"> <a href="About.html"> About</a> </div>
@@ -106,14 +110,15 @@
     </nav>
 
 
-    
-    <form class="register-card">
+
+    <form class="register-card" id="registerForm" novalidate>
 
         <h2>Create Account</h2>
         <div id="regname">
             <div>
                 <label for="name">First Name</label>
-                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="First Name" required id="name">
+                <span class="error" id="nameError"></span>
             </div>
             <div>
                 <label for="lastname">Last Name</label>
@@ -123,11 +128,13 @@
         <div id="regcontact">
             <div>
                 <label for="email">Email</label>
-                <input type="email" placeholder="Email" required>
+                <input type="email" placeholder="Email" required id="email">
+                <span class="error" id="emailError"></span>
             </div>
             <div>
                 <label for="number">Contact Number</label>
-                <input type="text" placeholder="Phone Number" required>
+                <input type="text" placeholder="Phone Number" required id="phone">
+                <span class="error" id="phoneError"></span>
             </div>
         </div>
 
@@ -136,8 +143,9 @@
         <div class="gender-box">
             <label>Gender:</label>
             <div class="gender-options">
-                <label><input type="radio" name="gender" class="selgender"> Male</label>
-                <label><input type="radio" name="gender" class="selgender"> Female</label>
+                <label><input type="radio" name="gender" class="selgender" value="male"> Male</label>
+                <label><input type="radio" name="gender" class="selgender" value="female"> Female</label>
+                <span class="error" id="genderError"></span>
             </div>
         </div>
 
@@ -146,10 +154,13 @@
         <!-- Password -->
         <div class="password-box">
             <div><label for="">Password</label>
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" required id="password">
+                <span class="error" id="passwordError"></span>
             </div>
-            <div><label for="">Confirm password</label>
-                <input type="password" placeholder="Confirm Password" required>
+            
+            <div><label for="Cnfrpass">Confirm password</label>
+                <input type="password" id="Cnfrpass"  placeholder="Confirm Password">
+                <span class="error" id="confirmError"></span>
             </div>
         </div>
         <!-- Referral -->
@@ -158,11 +169,12 @@
         </div>
         <!-- Terms -->
         <div class="terms">
-            <input type="checkbox" id="terms" required>
+            <input type="checkbox" id="terms" required >
             <label for="terms">I agree to Terms & Conditions</label>
         </div>
+        <span class="error" id="termsError"></span>
 
-        <button type="submit">Register</button>
+        <button type="submit" id="regbtn"> Register</button>
 
         <p class="login-link">
             Already have an account?
@@ -171,12 +183,100 @@
 
     </form>
 
-    </div>
+    
+
 
     <footer class="footer">
         <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
     </footer>
-     <script src="index.js"></script>
+    <script>document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let isValid = true;
+
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let phone = document.getElementById("phone");
+    let gender = document.querySelector('input[name="gender"]:checked');
+    let confirm=document.getElementById("Cnfrpass");
+    let terms=document.getElementById("terms");
+
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+    let phoneError = document.getElementById("phoneError");
+    let genderError = document.getElementById("genderError");
+    let confirmError=document.getElementById("confirmError");
+    let termsError=document.getElementById("termsError");
+
+
+    nameError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    phoneError.textContent = "";
+    genderError.textContent = "";
+
+    if(name.value.trim() === ""){
+        nameError.textContent = "Name is required";
+        isValid = false;
+    }
+if (!terms.checked){
+    termsError.textContent="Please checked the box";
+    isValid=false;
+}
+  
+    if(!email.value.includes('@')){
+        if(email.value.trim() === ""){
+            emailError.textContent = "Email is required!";
+            isValid = false;
+        }
+        else{
+        emailError.textContent = "Enter the valid Email";
+        isValid = false};
+    }
+
+  
+    if(password.value.length < 4){
+        passwordError.textContent = "Min 4 characters";
+        isValid = false;
+    }
+    if (password.value!=confirm.value){
+        confirmError.textContent="Password not match!"
+        isValid =false;
+    }
+    
+
+    if(phone.value.trim() === ""){
+        phoneError.textContent = "Phone required";
+        isValid = false;
+    }
+if(phone.value.length <10){
+        phoneError.textContent = "Please enter correct phone no.";
+        isValid = false;
+    }
+    
+    if(!gender){
+        genderError.textContent = "Select gender";
+        isValid = false;
+    }
+
+    if(!isValid) return;
+    
+    let user = {
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      phone: phone.value,
+      gender: gender.value
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Registered Successfully!");
+    window.location.href = "login.html";
+});</script>
+<script src="index.js"></script>
 </body>
 
 </html>

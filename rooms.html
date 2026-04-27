@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,15 @@
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="rooms.css">
+    <script src="https://kit.fontawesome.com/df4794220c.js" crossorigin="anonymous"></script>
 
     <style>
-        .nv-rooms{
-            border-bottom:2px solid yellow;
+        .nv-rooms {
+            border-bottom: 2px solid yellow;
             border-radius: 6px;
         }
-        .nv-rooms a{
+
+        .nv-rooms a {
             color: rgb(230, 230, 62);
         }
     </style>
@@ -22,7 +25,7 @@
 
 <body>
 
-<nav class="nav">
+    <nav class="nav">
         <div class="logoname">
             <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
                 <img src="images/hotel_name.png" class="nameimg"></a>
@@ -32,7 +35,7 @@
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
             <div class="nv-destination"> <a href="destinations.html">Destination</a> </div>
-    
+
             <div class="nv-contact"> <a href="contact.html"> Contact</a> </div>
             <div class="nv-about"> <a href="About.html"> About</a> </div>
         </div>
@@ -40,8 +43,8 @@
             <div class="nv-login"> <a href="login.html">Sign in</a> </div>
         </div>
     </nav>
-    
-    
+
+
     <nav class="navbarm">
         <div class="logoname">
             <a href="index.html"><img src="images/building logo.png" alt="" id="logoalph">
@@ -57,7 +60,7 @@
                 <div class="line3"></div>
             </div>
         </div>
-        <div class="navtitle" id="sidebar"> 
+        <div class="navtitle" id="sidebar">
             <div class="nv-home"> <a href="index.html">Home</a> </div>
             <div class="nv-Services"><a href="services.html">Services</a> </div>
             <div class="nv-rooms"> <a href="rooms.html"> Rooms</a> </div>
@@ -68,67 +71,338 @@
     </nav>
 
 
+    <div id="allroom" class="page active">
+        <div class="tag">
+            <div class="txt">Our Rooms</div>
+        </div>
 
-<div class="tag">
-    <div class="txt">Our Rooms</div>
-</div>
-
-<div class="rooms-container">
-    <div class="room-card">
-        <img src="images/deluxe.avif" alt="">
+        <div class="rooms-container">
+            <div class="room-card">
+                <img src="images/deluxe.avif" onclick="showroom('standard')">
                 <div class="room-badge">Standard</div>
 
-        <h3>Deluxe Room</h3>
-        <p>Comfortable room with modern amenities.</p>
-        <div class="booksection">
-            <div class="price">Rs 4500/-<br>per night</div>
-            <div class="bookbtn"><a href="login.html"> Book Now</a></div>
-        </div>
-    </div>
+                <h3>Deluxe Room</h3>
+                <p>Comfortable room with modern amenities.</p>
+                <div class="booksection">
+                    <div class="price">Rs 4500/-<br>per night</div>
+                    <div class="bookbtn"><a href="login.html"> Book Now</a></div>
+                </div>
+            </div>
 
-    <div class="room-card">
-        <img src="images/premium.avif" alt="">
-        <div class="room-badge">Premium</div>
-        <h3>Luxury Suite</h3>
-        <p>Spacious suite with premium services.</p>
-        <div class="booksection">
-            <div class="price">Rs 9800/-<br>per night</div>
-            <div class="bookbtn"><a href="login.html"> Book Now</a></div>
-        </div>
-    </div>
+            <div class="room-card">
+                <img src="images/premium.avif" alt="" onclick="showroom('premium')">
+                <div class="room-badge">Premium</div>
+                <h3>Luxury Suite</h3>
+                <p>Spacious suite with premium services.</p>
+                <div class="booksection">
+                    <div class="price">Rs 9800/-<br>per night</div>
+                    <div class="bookbtn"><a href="login.html"> Book Now</a></div>
+                </div>
+            </div>
 
-    <div class="room-card">
-        <img src="images/buisness.avif" alt="">
+            <div class="room-card">
+                <img src="images/buisness.avif" alt="" onclick="showroom('executive')">
                 <div class="room-badge">Buisness</div>
 
-        <h3>Executive Room</h3>
-        <p>Perfect for business travelers.</p>
-        <div class="booksection">
-            <div class="price">Rs 6500/-<br>per night</div>
-            <div class="bookbtn"><a href="login.html"> Book Now</a></div>
+                <h3>Executive Room</h3>
+                <p>Perfect for business travelers.</p>
+                <div class="booksection">
+                    <div class="price">Rs 6500/-<br>per night</div>
+                    <div class="bookbtn"><a href="login.html"> Book Now</a></div>
 
-        </div>
-    </div>
+                </div>
+            </div>
 
-    <div class="room-card">
-        <img src="images/family.avif" alt="">
+            <div class="room-card">
+                <img src="images/family.avif" alt="" onclick="showroom('family')">
                 <div class="room-badge">Family</div>
 
-        <h3>Family Room</h3>
-        <p>Best for family stays.</p>
-        <div class="booksection">
-            <div class="price">Rs 7500/-<br>per night</div>
-            <div class="bookbtn"><a href="login.html"> Book Now</a></div>
+                <h3>Family Room</h3>
+                <p>Best for family stays.</p>
+                <div class="booksection">
+                    <div class="price">Rs 11500/-<br>per night</div>
+                    <div class="bookbtn"><a href="login.html"> Book Now</a></div>
+                </div>
+            </div>
+
         </div>
-    </div>
+        <div>
+        </div>
+        </div>
 
-</div>
-<div>
-<footer class="footer">
-    <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
 
-</footer>
-</div>
- <script src="index.js"></script>
+        <!-- ======="standard" ======= -->
+
+        <div id="standard" class="page">
+            <div class="tag">
+                <div class="txt">Standard Room</div>
+
+            </div>
+
+            <div>
+                <div class="inform">
+                    <h3>Ideal for a relaxed homestay experience, our Standard Rooms are snug and cosy with classic
+                        wooden flooring and a welcoming ambience. With a comfortable queen-sized bed, a traditional
+                        fireplace and a host of modern amenities, there's everything to make you feel at home. There are
+                        a total of 3 rooms in this category, which easily accommodate up to 2 guests.</h3>
+                </div>
+                <div class="amenities">
+                    <h1>Amenities</h1>
+                    <div class="de">
+                        <div>🛏️ Queen Bed </div>
+                        <div>❄️ Air Conditioning </div>
+                        <div>📶 Free WiFi </div>
+                        <div>📺 LED TV </div>
+                        <div>🪟 Window View</div>
+                        <div>🧴 Bathroom cosmetics </div>
+
+                    </div>
+                </div>
+                <!-- <div class="explore">
+                    <h1>Explore</h1>
+                    <div></div>
+                </div> -->
+                <div class="explore">
+                    <h1>Explore</h1>
+
+
+                    <div class="slider">
+                        <button class="prev"><span>&#8592;</span></button>
+                        <div class="room active">
+                            <img src="images/premium.avif" alt="Luxury Suite">
+                            <div class="slide-caption">Our Luxury Suite</div>
+                        </div>
+
+                        <div class="room">
+                            <img src="images/buisness.avif" alt="Executive Room">
+                            <div class="slide-caption">Executive Room</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/food service.png" alt="Executive Room">
+                            <div class="slide-caption">24/7 Food</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/swimming poolcommon.avif" alt="Executive Room">
+                            <div class="slide-caption">Our Premium Swimming Pool</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/diningarea.jpg" alt="Dinning area">
+                            <div class="slide-caption">Dinning Lounge</div>
+                        </div>
+                        <button class="next"><span>&#8594;</span></button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+<div id="premium" class="page">
+            <div class="tag">
+                <div class="txt">Luxury Suite</div>
+
+            </div>
+
+            <div>
+                <div class="inform">
+                    <h3>Ideal for a relaxed homestay experience, our Standard Rooms are snug and cosy with classic
+                        wooden flooring and a welcoming ambience. With a comfortable queen-sized bed, a traditional
+                        fireplace and a host of modern amenities, there's everything to make you feel at home. There are
+                        a total of 3 rooms in this category, which easily accommodate up to 2 guests.</h3>
+                </div>
+                <div class="amenities">
+                    <h1>Amenities</h1>
+                    <div class="de">
+                        <div>🛏️ King Bed + Living Area </div>
+                        <div>📶 High-Speed WiFi </div>
+                        <div>💼 Work Desk </div>
+                        <div>🍷 Mini Bar </div>
+                        <div>🛋️ Lounge Sofa </div>
+                        <div>📺 LED TV </div>
+                        <div>🌆 Balcony View</div>
+                        <div>🧴 Bathroom cosmetics </div>
+
+                    </div>
+                </div>
+                <!-- <div class="explore">
+                    <h1>Explore</h1>
+                    <div></div>
+                </div> -->
+                <div class="explore">
+                    <h1>Explore</h1>
+
+
+                    <div class="slider">
+                        <button class="prev"><span>&#8592;</span></button>
+                        <div class="room active">
+                            <img src="images/premium.avif" alt="Luxury Suite">
+                            <div class="slide-caption">Our Luxury Suite</div>
+                        </div>
+
+                        <div class="room">
+                            <img src="images/buisness.avif" alt="Executive Room">
+                            <div class="slide-caption">Executive Room</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/food service.png" alt="Executive Room">
+                            <div class="slide-caption">24/7 Food</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/swimming poolcommon.avif" alt="Executive Room">
+                            <div class="slide-caption">Our Premium Swimming Pool</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/diningarea.jpg" alt="Dinning area">
+                            <div class="slide-caption">Dinning Lounge</div>
+                        </div>
+                        <button class="next"><span>&#8594;</span></button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="executive" class="page">
+            <div class="tag">
+                <div class="txt">Executive</div>
+
+            </div>
+
+            <div>
+                <div class="inform">
+                    <h3>Ideal for a relaxed homestay experience, our Standard Rooms are snug and cosy with classic
+                        wooden flooring and a welcoming ambience. With a comfortable queen-sized bed, a traditional
+                        fireplace and a host of modern amenities, there's everything to make you feel at home. There are
+                        a total of 3 rooms in this category, which easily accommodate up to 2 guests.</h3>
+                </div>
+                <div class="amenities">
+                    <h1>Amenities</h1>
+                    <div class="de">
+                        <div>🛏️ King Size Bed </div>
+                        <div>❄️ Air Conditioning </div>
+                        <div>🧺 Laundry Service </div>
+                        <div>💼 Work Desk</div>
+                        <div>📶 Free WiFi </div>
+                        <div>📺 Smart TV</div>
+                        <div>☕ Coffee Maker </div>
+                        <div>🧴 Bathroom cosmetics </div>
+
+                    </div>
+                </div>
+                <!-- <div class="explore">
+                    <h1>Explore</h1>
+                    <div></div>
+                </div> -->
+                <div class="explore">
+                    <h1>Explore</h1>
+
+
+                    <div class="slider">
+                        <button class="prev"><span>&#8592;</span></button>
+                        <div class="room active">
+                            <img src="images/premium.avif" alt="Luxury Suite">
+                            <div class="slide-caption">Our Luxury Suite</div>
+                        </div>
+
+                        <div class="room">
+                            <img src="images/buisness.avif" alt="Executive Room">
+                            <div class="slide-caption">Executive Room</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/food service.png" alt="Executive Room">
+                            <div class="slide-caption">24/7 Food</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/swimming poolcommon.avif" alt="Executive Room">
+                            <div class="slide-caption">Our Premium Swimming Pool</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/diningarea.jpg" alt="Dinning area">
+                            <div class="slide-caption">Dinning Lounge</div>
+                        </div>
+                        <button class="next"><span>&#8594;</span></button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div id="family" class="page">
+            <div class="tag">
+                <div class="txt">Standard Room</div>
+
+            </div>
+
+            <div>
+                <div class="inform">
+                    <h3>Ideal for a relaxed homestay experience, our Standard Rooms are snug and cosy with classic
+                        wooden flooring and a welcoming ambience. With a comfortable queen-sized bed, a traditional
+                        fireplace and a host of modern amenities, there's everything to make you feel at home. There are
+                        a total of 3 rooms in this category, which easily accommodate up to 2 guests.</h3>
+                </div>
+                <div class="amenities">
+                    <h1>Amenities</h1>
+                    <div class="de">
+                        <div>🛏️ Multiple Beds </div>
+                        <div>🍽️ Dining Area </div>
+                        <div>📶 High-Speed WiFi </div>
+                        <div>🧳 Extra Storage</div>
+                        <div>📺 Large TV </div>
+                        <div>☕ Coffee Maker</div>
+                        <div>🧊 Mini Fridge </div>
+                        <div>🚿 Spacious Bathroom</div>
+
+                    </div>
+                </div>
+                <!-- <div class="explore">
+                    <h1>Explore</h1>
+                    <div></div>
+                </div> -->
+                <div class="explore">
+                    <h1>Explore</h1>
+
+
+                    <div class="slider">
+                        <button class="prev"><span>&#8592;</span></button>
+                        <div class="room active">
+                            <img src="images/premium.avif" alt="Luxury Suite">
+                            <div class="slide-caption">Our Luxury Suite</div>
+                        </div>
+
+                        <div class="room">
+                            <img src="images/buisness.avif" alt="Executive Room">
+                            <div class="slide-caption">Executive Room</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/food service.png" alt="Executive Room">
+                            <div class="slide-caption">24/7 Food</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/swimming poolcommon.avif" alt="Executive Room">
+                            <div class="slide-caption">Our Premium Swimming Pool</div>
+                        </div>
+                        <div class="room">
+                            <img src="images/diningarea.jpg" alt="Dinning area">
+                            <div class="slide-caption">Dinning Lounge</div>
+                        </div>
+                        <button class="next"><span>&#8594;</span></button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
+
+        </footer>
+    
+    <script src="index.js"></script>
 </body>
+
 </html>

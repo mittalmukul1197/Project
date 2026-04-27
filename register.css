@@ -178,3 +178,93 @@ label{
     font-size: 13px;
 }
 
+
+
+
+
+
+
+.error {
+    color: rgb(245, 0, 0);
+    font-size: 13px;
+    margin-top: 4px;
+    display: block;
+    
+}
+
+body.dark input{
+    background-color: black;
+}
+input:autofill{
+    background-color: black;
+    color: azure;
+}
+
+@media (max-width: 768px) {
+
+    /* Container width */
+    .register-card {
+        width: 80%;
+        padding: 20px;
+        margin-top: 100px;
+    }
+#regcontact div,#regname div,.password-box div,.referralcodebox{
+    width: 90%;
+    gap: 20px;
+}
+
+#regcontact,#regname,.gender-box,.password-box{
+    gap: 50px;
+}
+    /* Stack name fields */
+    #regname {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Stack contact fields */
+    #regcontact {
+        flex-direction: column;
+        gap: 10px;
+    }
+.register-card label{
+    font-size: x-large;
+}
+    /* Inputs full width */
+    .register-card input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* Gender alignment */
+    .gender-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* Button full width */
+    .register-card button {
+        width: 100%;
+    }
+
+    .password-box{
+        flex-direction: column;
+    }
+
+    .terms{
+       width: 50%;
+
+    }
+    .terms input{
+        width: 10%;
+    }
+    .terms label{
+        width: 80%;
+    }
+    /* Reduce heading size */
+    .register-card h2 {
+        font-size: 22px;
+    }
+
+}
