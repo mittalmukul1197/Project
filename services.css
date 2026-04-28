@@ -17,7 +17,7 @@ p{
     margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
-    height: 650px;
+    /* height: 650px; */
     gap: 20px;
     align-items: center;
     justify-content: center;
@@ -27,7 +27,7 @@ p{
 }
 .cardfac{
     width: 23%;
-    height: 45%;
+    height: 300px;
     border: 2px solid black;
     text-align: center;
     display: flex;
@@ -84,4 +84,14 @@ body.dark .factag{
 
 body.dark .img{
     filter: brightness(0.8);
+}
+
+
+@media (max-width:768px){
+    .cardfac{
+        width: 90%;
+        height: 350px;
+    }
+
+
 }

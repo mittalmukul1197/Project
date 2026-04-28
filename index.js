@@ -73,33 +73,44 @@ setInterval(() => {
 
 
 
-const room = document.querySelectorAll(".room");
-
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-
 let index = 0;
 
 /* Show slide */
 function showSlidemanual(i) {
-  room.forEach(slide => slide.classList.remove("active"));
+  
+    let activePage = document.querySelector(".page.active");
+    
+  
+    let pageRooms = activePage.querySelectorAll(".room");
+  
+  
 
-    if (i >= room.length) index = 0;
-    if (i < 0) index = room.length - 1;
+    if (pageRooms.length == 0) return;
 
-    room[index].classList.add("active");
+    if (i >= pageRooms.length) {
+        index = 0;
+    } else if (i < 0) {
+        index = pageRooms.length - 1;
+    } else {
+        index = i;
+    }
+
+    pageRooms.forEach(slide => slide.classList.remove("active"));
+    pageRooms[index].classList.add("active");
 }
 
-/* Next */
-nextBtn.addEventListener("click", () => {
-    index++;
-    showSlidemanual(index);
+let nextBtns = document.querySelectorAll(".next");
+nextBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        showSlidemanual(index + 1);
+    });
 });
 
-/* Previous */
-prevBtn.addEventListener("click", () => {
-    index--;
-    showSlidemanual(index);
+let prevBtns = document.querySelectorAll(".prev");
+prevBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        showSlidemanual(index - 1);
+    });
 });
 
 
@@ -111,6 +122,9 @@ function showroom(id){
     });
 
     document.getElementById(id).classList.add("active");
+    
+    // Reset the slider to the first image when switching pages
+    showSlidemanual(0);
 }
 
 
