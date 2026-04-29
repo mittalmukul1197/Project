@@ -14,13 +14,16 @@ nav {
     height: 6vh;
     width: 100%;
     align-self: center;
+    /* background-color: rgb(75, 15, 26); */
     justify-content: space-between;
     padding: 20px;
     /* background-color: rgba(43, 1, 14, 0.895); */
-    background-color: rgb(75, 15, 26);
-    /* background-image: radial-gradient(circle rgb(176, 57, 79) rgb(75,15,26) ); */
-    /* box-shadow: 0px 50px 90px   rgba(43, 1, 14, 0.895); // rgba(175, 144, 6, 0.895) */
+/* background: linear-gradient(to right, #4b0f1a, #6e1d2e, #4b0f1a);    box-shadow: 0px 50px 90px   rgba(43, 1, 14, 0.895); // rgba(175, 144, 6, 0.895) */
+background: 
+  radial-gradient( at top, rgba(93, 1, 1, 0.98) 15%, #430110, #500113, #48010e);
+  /* linear-gradient(135deg, #2b0c13, #4b0f1a); */
     box-shadow: 0px 0px 30px rgb(75, 15, 26);
+    backdrop-filter: blur(10px);
     position: fixed;
     z-index: 2;
     margin-top: 0%;
@@ -270,15 +273,19 @@ nav {
     position: absolute;
     color: gold;
     /* background-image: radial-gradient(at top, rgba(112, 78, 5, 0.786) 10%,rgba(72, 42, 1, 0.848) 30%,rgb(68, 0, 0)); */
-    min-width: 150px;
-background-image: radial-gradient(
-  circle at top,
-  rgba(255, 166, 0, 0.222) 1%,
-  rgb(100, 10, 10) 30%,
-  rgb(46, 2, 2) 100%
-);
+    min-width: 200px;
+    /* gap: 100px; */
+    padding: 20px 10px;
+    /* background-image: radial-gradient(circle at top,
+            rgba(255, 116, 116, 0.4) 1%,
+            rgb(100, 10, 10, 0.4) 30%,
+            rgb(46, 2, 2, 0.8) 100%); */
+background-image:   radial-gradient( 120% 60% at top, rgba(93, 1, 1, 0.98) 15%, #430110, #500113, #48010e);
+;
+opacity: 0.8;
     box-shadow: 3px 5px 8px rgba(53, 3, 3, 0.707);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
+  
     z-index: 10;
     border-radius: 5px;
     top: 100%;
@@ -287,16 +294,17 @@ background-image: radial-gradient(
 }
 
 .dropdown-content a {
-    color: gold;
-    padding: 10px 16px;
+    color: rgb(255, 217, 0);
+    padding: 16px 12px;
     text-decoration: none;
     display: block;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .dropdown-content a:hover {
-    padding: 10px 16px;
-    color: goldenrod;
+    padding: 16px 12px;
+    color: rgb(255, 183, 0);
+
 }
 
 /* .uparrow{
@@ -669,19 +677,13 @@ body {
 }
 
 
-.hmrooms-container h1 {
+.hmrooms-container h1,
+.hmservices h1,
+.reviewhome h1 {
     color: rgb(109, 5, 5);
     text-shadow: 0px 0px 10px #ffc107;
 }
 
-
-
-
-
-.hmservices h1 {
-    color: rgb(109, 5, 5);
-    text-shadow: 0px 0px 10px #ffc107;
-}
 
 .hmservices {
     display: flex;
@@ -785,7 +787,77 @@ body {
     }
 }
 
+.reviewhome {
+    padding: 40px 20px 50px;
+    text-align: center;
+    margin-top: 50px;
+}
 
+
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+}
+
+.review-card {
+    background: white;
+    border-radius: 16px;
+    padding: 26px 22px;
+    width: 280px;
+    box-shadow: 0 4px 20px rgba(75, 15, 26, 0.15);
+    border-top: 4px solid gold;
+    text-align: left;
+    box-shadow: 1px 5px 10px rgb(75, 0, 0);
+    transition: transform 0.3s;
+    transition-duration:  0.2s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 1px 10px 10px rgb(75, 0, 0);
+
+}
+
+.review-card .stars {
+    color: rgb(253, 223, 55);
+    text-shadow:0px 0px 1px #1a0101;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.review-card p {
+    font-size: 15px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.review-card .author {
+    font-weight: bold;
+    color: rgb(75, 15, 26);
+    font-size: 20px;
+}
+
+.review-card .location {
+    font-size: 15px;
+    color: #999;
+}
+
+body.dark .review-card {
+    background: #350202;
+    color: #eee;
+}
+body.dark .review-card .author{
+    color: goldenrod;
+}
+
+body.dark .review-card p {
+    color: #ccc;
+}
 
 
 
@@ -885,7 +957,7 @@ body {
     border: none;
     backdrop-filter: blur(10px);
     box-shadow: 0px 0px 10px #350202;
-    
+
 }
 
 @media (max-width:768px) {
@@ -952,9 +1024,10 @@ body.dark .cardfac {
     border-color: #444;
     box-shadow: 0px 0px 10px rgba(113, 102, 102, 0.516);
 }
-body.dark .room-card{
 
-        background-image: radial-gradient(circle at top,rgba(112, 107, 7, 0.742) 10%,rgb(46, 0, 0));
+body.dark .room-card {
+
+    background-image: radial-gradient(circle at top, rgba(112, 107, 7, 0.742) 10%, rgb(46, 0, 0));
 
     background-color: #350202;
     color: white;
@@ -1067,8 +1140,9 @@ body.dark .welcome {
     text-shadow: 0px 0px 6px black;
     color: #fde767;
 }
-body.dark #scrollbtn{
-color:  #250202;
-font-style: bold;
+
+body.dark #scrollbtn {
+    color: #250202;
+    font-style: bold;
     background-color: rgba(252, 223, 59, 0.938);
 }

@@ -123,5 +123,32 @@
     <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
 
     </footer>
+    <script>
+
+document.getElementById("logincard").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("passowrd").value;
+
+    let savedUser = JSON.parse(localStorage.getItem("user"));
+
+    if(!savedUser){
+        alert("No user found! Please register first.");
+        return;
+    }
+
+    if(email === savedUser.email && password === savedUser.password){
+        alert("Login Successful!");
+
+        // ✅ mark user as logged in
+        localStorage.setItem("isLoggedIn", "true");
+
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid email or password");
+    }
+});
+</script>
      <script src="index.js"></script>
 </html>

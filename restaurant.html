@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramuli Luxury Hotel - Restaurant</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="images/alphabet logo crop.png" type="image/x-icon">
+    <link rel="stylesheet" href="restaurant.css">
+    <style>
+        /* Highlight the Services nav link since restaurant is part of services */
+        .nv-Services {
+            border-bottom: 2px solid yellow;
+            border-radius: 6px;
+        }
+
+        .nv-Services a {
+            color: rgb(230, 230, 62);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== DESKTOP NAVBAR ===== -->
+    <nav class="nav">
+        <div class="logoname">
+            <a href="index.html">
+                <img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg">
+            </a>
+        </div>
+        <div class="navtitle">
+            <div class="nv-home"><a href="index.html">Home</a></div>
+            <div class="nv-Services"><a href="services.html">Services</a></div>
+            <div class="nv-rooms"><a href="rooms.html">Rooms</a></div>
+            <div class="nv-destination"><a href="destinations.html">Destination</a></div>
+            <div class="nv-contact"><a href="contact.html">Contact</a></div>
+            <div class="nv-about"><a href="About.html">About</a></div>
+        </div>
+        <div class="navlogin">
+            <div class="nv-login"><a href="login.html">Sign in</a></div>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE NAVBAR ===== -->
+    <nav class="navbarm">
+        <div class="logoname">
+            <a href="index.html">
+                <img src="images/building logo.png" alt="" id="logoalph">
+                <img src="images/hotel_name.png" class="nameimg">
+            </a>
+        </div>
+        <div class="menum">
+            <div class="navlogin">
+                <div class="nv-login"><a href="login.html">Sign in</a></div>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+        <div class="navtitle" id="sidebar">
+            <div class="nv-home"><a href="index.html">Home</a></div>
+            <div class="nv-Services"><a href="services.html">Services</a></div>
+            <div class="nv-rooms"><a href="rooms.html">Rooms</a></div>
+            <div class="nv-destination"><a href="destinations.html">Destinations</a></div>
+            <div class="nv-contact"><a href="contact.html">Contact</a></div>
+            <div class="nv-about"><a href="About.html">About</a></div>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <div class="tag">
+        <div class="txt">Our Restaurant</div>
+    </div>
+
+    <!-- ===== SEARCH BAR ===== -->
+    <div class="search-section">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search for a dish..."
+            oninput="searchDishes()"
+        >
+    </div>
+
+    <!-- ===== CATEGORY FILTER BUTTONS ===== -->
+    <div class="filter-section">
+        <h2>Our Indian Menu</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterMenu('all', this)">All</button>
+            <button class="filter-btn" onclick="filterMenu('starter', this)">Starters</button>
+            <button class="filter-btn" onclick="filterMenu('main', this)">Main Course</button>
+            <button class="filter-btn" onclick="filterMenu('bread', this)">Breads</button>
+            <button class="filter-btn" onclick="filterMenu('rice', this)">Rice & Biryani</button>
+            <button class="filter-btn" onclick="filterMenu('dessert', this)">Desserts</button>
+            <button class="filter-btn" onclick="filterMenu('drinks', this)">Drinks</button>
+        </div>
+    </div>
+
+    <!-- ===== MENU CARDS ===== -->
+    <div class="menu-container" id="menuContainer">
+
+        <!-- STARTERS -->
+        <div class="dish-card" data-category="starter" data-name="Samosa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Samosachutney.jpg/400px-Samosachutney.jpg" alt="Samosa">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️ Mild</span>
+            </div>
+            <h3>Samosa</h3>
+            <p>Crispy golden pastry filled with spiced potatoes and peas. Served with mint chutney.</p>
+            <div class="price-row">
+                <span class="dish-price">₹120</span>
+                <button class="add-btn" onclick="addToCart('Samosa', 120)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="starter" data-name="Paneer Tikka">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Paneer_tikka.jpg/400px-Paneer_tikka.jpg" alt="Paneer Tikka">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️🌶️ Medium</span>
+            </div>
+            <h3>Paneer Tikka</h3>
+            <p>Marinated cottage cheese grilled in a tandoor with bell peppers and onions.</p>
+            <div class="price-row">
+                <span class="dish-price">₹320</span>
+                <button class="add-btn" onclick="addToCart('Paneer Tikka', 320)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="starter" data-name="Chicken Tikka">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Chicken_tikka.jpg/400px-Chicken_tikka.jpg" alt="Chicken Tikka">
+            <div class="dish-tag">
+                <span class="nonveg-badge">🔴 Non-Veg</span>
+                <span class="spice-level">🌶️🌶️ Medium</span>
+            </div>
+            <h3>Chicken Tikka</h3>
+            <p>Tender chicken marinated in yogurt and spices, chargrilled to perfection.</p>
+            <div class="price-row">
+                <span class="dish-price">₹380</span>
+                <button class="add-btn" onclick="addToCart('Chicken Tikka', 380)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="starter" data-name="Pani Puri">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Pani_puri_from_Patna_Bihar.jpg/400px-Pani_puri_from_Patna_Bihar.jpg" alt="Pani Puri">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️🌶️🌶️ Spicy</span>
+            </div>
+            <h3>Pani Puri</h3>
+            <p>Hollow crispy puris filled with spiced water, chickpeas and tangy tamarind chutney.</p>
+            <div class="price-row">
+                <span class="dish-price">₹100</span>
+                <button class="add-btn" onclick="addToCart('Pani Puri', 100)">+ Add</button>
+            </div>
+        </div>
+
+        <!-- MAIN COURSE -->
+        <div class="dish-card" data-category="main" data-name="Butter Chicken">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Butter_Chicken.jpg/400px-Butter_Chicken.jpg" alt="Butter Chicken">
+            <div class="dish-tag">
+                <span class="nonveg-badge">🔴 Non-Veg</span>
+                <span class="spice-level">🌶️ Mild</span>
+            </div>
+            <h3>Butter Chicken</h3>
+            <p>Slow-cooked chicken in a rich, creamy tomato-butter gravy. India's most loved dish.</p>
+            <div class="price-row">
+                <span class="dish-price">₹450</span>
+                <button class="add-btn" onclick="addToCart('Butter Chicken', 450)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="main" data-name="Palak Paneer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Palak_paneer.jpg/400px-Palak_paneer.jpg" alt="Palak Paneer">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️ Mild</span>
+            </div>
+            <h3>Palak Paneer</h3>
+            <p>Soft cottage cheese cubes in a smooth, spiced spinach gravy. A classic North Indian favourite.</p>
+            <div class="price-row">
+                <span class="dish-price">₹350</span>
+                <button class="add-btn" onclick="addToCart('Palak Paneer', 350)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="main" data-name="Dal Makhani">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Dal_makhani.jpg/400px-Dal_makhani.jpg" alt="Dal Makhani">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️ Mild</span>
+            </div>
+            <h3>Dal Makhani</h3>
+            <p>Black lentils slow-cooked overnight with butter and cream. Rich, hearty and comforting.</p>
+            <div class="price-row">
+                <span class="dish-price">₹280</span>
+                <button class="add-btn" onclick="addToCart('Dal Makhani', 280)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="main" data-name="Mutton Rogan Josh">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Roghan_josh.jpg/400px-Roghan_josh.jpg" alt="Rogan Josh">
+            <div class="dish-tag">
+                <span class="nonveg-badge">🔴 Non-Veg</span>
+                <span class="spice-level">🌶️🌶️🌶️ Spicy</span>
+            </div>
+            <h3>Mutton Rogan Josh</h3>
+            <p>Aromatic Kashmiri mutton curry with whole spices and a deep red colour. Bold and flavourful.</p>
+            <div class="price-row">
+                <span class="dish-price">₹550</span>
+                <button class="add-btn" onclick="addToCart('Mutton Rogan Josh', 550)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="main" data-name="Chole Bhature">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Chole_bhature.jpg/400px-Chole_bhature.jpg" alt="Chole Bhature">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️🌶️ Medium</span>
+            </div>
+            <h3>Chole Bhature</h3>
+            <p>Spicy chickpea curry served with fluffy deep-fried bread. A beloved Punjabi classic.</p>
+            <div class="price-row">
+                <span class="dish-price">₹220</span>
+                <button class="add-btn" onclick="addToCart('Chole Bhature', 220)">+ Add</button>
+            </div>
+        </div>
+
+        <!-- BREADS -->
+        <div class="dish-card" data-category="bread" data-name="Butter Naan">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Naan.jpg/400px-Naan.jpg" alt="Butter Naan">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">No Spice</span>
+            </div>
+            <h3>Butter Naan</h3>
+            <p>Soft leavened bread baked fresh in a tandoor, brushed generously with butter.</p>
+            <div class="price-row">
+                <span class="dish-price">₹60</span>
+                <button class="add-btn" onclick="addToCart('Butter Naan', 60)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="bread" data-name="Garlic Naan">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Garlic_naan.jpg/400px-Garlic_naan.jpg" alt="Garlic Naan">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">No Spice</span>
+            </div>
+            <h3>Garlic Naan</h3>
+            <p>Tandoor-baked naan topped with fresh garlic and coriander. Perfect with any curry.</p>
+            <div class="price-row">
+                <span class="dish-price">₹80</span>
+                <button class="add-btn" onclick="addToCart('Garlic Naan', 80)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="bread" data-name="Paratha">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Aloo_paratha.jpg/400px-Aloo_paratha.jpg" alt="Aloo Paratha">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️ Mild</span>
+            </div>
+            <h3>Aloo Paratha</h3>
+            <p>Whole wheat flatbread stuffed with spiced mashed potato. Served with butter and curd.</p>
+            <div class="price-row">
+                <span class="dish-price">₹130</span>
+                <button class="add-btn" onclick="addToCart('Aloo Paratha', 130)">+ Add</button>
+            </div>
+        </div>
+
+        <!-- RICE & BIRYANI -->
+        <div class="dish-card" data-category="rice" data-name="Chicken Biryani">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Biryani_at_Hyderabad.jpg/400px-Biryani_at_Hyderabad.jpg" alt="Chicken Biryani">
+            <div class="dish-tag">
+                <span class="nonveg-badge">🔴 Non-Veg</span>
+                <span class="spice-level">🌶️🌶️ Medium</span>
+            </div>
+            <h3>Chicken Biryani</h3>
+            <p>Fragrant basmati rice layered with spiced chicken, slow-cooked dum style. Served with raita.</p>
+            <div class="price-row">
+                <span class="dish-price">₹480</span>
+                <button class="add-btn" onclick="addToCart('Chicken Biryani', 480)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="rice" data-name="Veg Biryani">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Vegetable_biryani.jpg/400px-Vegetable_biryani.jpg" alt="Veg Biryani">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">🌶️🌶️ Medium</span>
+            </div>
+            <h3>Veg Biryani</h3>
+            <p>Aromatic basmati rice cooked with seasonal vegetables, whole spices and saffron.</p>
+            <div class="price-row">
+                <span class="dish-price">₹320</span>
+                <button class="add-btn" onclick="addToCart('Veg Biryani', 320)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="rice" data-name="Jeera Rice">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jeera_rice.jpg/400px-Jeera_rice.jpg" alt="Jeera Rice">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">No Spice</span>
+            </div>
+            <h3>Jeera Rice</h3>
+            <p>Basmati rice tempered with cumin seeds and ghee. Simple and fragrant.</p>
+            <div class="price-row">
+                <span class="dish-price">₹160</span>
+                <button class="add-btn" onclick="addToCart('Jeera Rice', 160)">+ Add</button>
+            </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="dish-card" data-category="dessert" data-name="Gulab Jamun">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Gulab_jamun_2.jpg/400px-Gulab_jamun_2.jpg" alt="Gulab Jamun">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">Sweet</span>
+            </div>
+            <h3>Gulab Jamun</h3>
+            <p>Soft milk-solid dumplings soaked in rose-flavoured sugar syrup. Served warm.</p>
+            <div class="price-row">
+                <span class="dish-price">₹150</span>
+                <button class="add-btn" onclick="addToCart('Gulab Jamun', 150)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="dessert" data-name="Rasmalai">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Rasmalai.jpg/400px-Rasmalai.jpg" alt="Rasmalai">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">Sweet</span>
+            </div>
+            <h3>Rasmalai</h3>
+            <p>Soft cottage cheese discs soaked in chilled saffron and cardamom flavoured milk.</p>
+            <div class="price-row">
+                <span class="dish-price">₹200</span>
+                <button class="add-btn" onclick="addToCart('Rasmalai', 200)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="dessert" data-name="Kheer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Kheer.jpg/400px-Kheer.jpg" alt="Kheer">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">Sweet</span>
+            </div>
+            <h3>Kheer</h3>
+            <p>Creamy Indian rice pudding slow-cooked in full milk with sugar, cardamom and dry fruits.</p>
+            <div class="price-row">
+                <span class="dish-price">₹170</span>
+                <button class="add-btn" onclick="addToCart('Kheer', 170)">+ Add</button>
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="dish-card" data-category="drinks" data-name="Mango Lassi">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Mango_lassi.jpg/400px-Mango_lassi.jpg" alt="Mango Lassi">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">Sweet</span>
+            </div>
+            <h3>Mango Lassi</h3>
+            <p>Chilled blended drink made with yogurt, fresh mango pulp and a pinch of cardamom.</p>
+            <div class="price-row">
+                <span class="dish-price">₹120</span>
+                <button class="add-btn" onclick="addToCart('Mango Lassi', 120)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="drinks" data-name="Masala Chai">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Masala_Chai.JPG/400px-Masala_Chai.JPG" alt="Masala Chai">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">No Spice</span>
+            </div>
+            <h3>Masala Chai</h3>
+            <p>Spiced Indian tea brewed with ginger, cardamom, cloves and cinnamon. Comforting and aromatic.</p>
+            <div class="price-row">
+                <span class="dish-price">₹60</span>
+                <button class="add-btn" onclick="addToCart('Masala Chai', 60)">+ Add</button>
+            </div>
+        </div>
+
+        <div class="dish-card" data-category="drinks" data-name="Fresh Lime Soda">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Nimbu_soda.jpg/400px-Nimbu_soda.jpg" alt="Fresh Lime Soda">
+            <div class="dish-tag">
+                <span class="veg-badge">🟢 Veg</span>
+                <span class="spice-level">Tangy</span>
+            </div>
+            <h3>Fresh Lime Soda</h3>
+            <p>Refreshing drink with freshly squeezed lime, black salt and soda. Sweet or salted on request.</p>
+            <div class="price-row">
+                <span class="dish-price">₹80</span>
+                <button class="add-btn" onclick="addToCart('Fresh Lime Soda', 80)">+ Add</button>
+            </div>
+        </div>
+
+        <!-- No results message -->
+        <div class="no-results" id="noResults">
+            😕 No dishes found. Try a different search!
+        </div>
+
+    </div>
+
+    <!-- ===== CART SECTION ===== -->
+    <div class="cart-section" id="cartSection">
+        <h2>🛒 Your Order</h2>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total" id="cartTotal">Total: ₹0</div>
+        <button class="order-btn" onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with ♥ by Web Innovators</p>
+    </footer>
+
+    <!-- Load shared JS (for toggleMenu, dark mode, etc.) -->
+    <script src="index.js"></script>
+    <!-- Load restaurant-specific JS -->
+    <script src="restaurant.js"></script>
+
+</body>
+</html>

@@ -382,3 +382,91 @@ scrolltotop.addEventListener("click",scrolltoTop);
 //     window.location.href = "login.html";
 // });
 
+
+
+
+
+
+
+
+
+
+
+// document.getElementById("logincard").addEventListener("submit", function(e){
+//     e.preventDefault();
+
+//     let email = document.getElementById("email").value;
+//     let password = document.getElementById("passowrd").value;
+
+//     let savedUser = JSON.parse(localStorage.getItem("user"));
+
+//     if(!savedUser){
+//         alert("No user found! Please register first.");
+//         return;
+//     }
+
+//     if(email === savedUser.email && password === savedUser.password){
+//         alert("Login Successful!");
+
+//         // ✅ mark user as logged in
+//         localStorage.setItem("isLoggedIn", "true");
+
+//         window.location.href = "index.html";
+//     } else {
+//         alert("Invalid email or password");
+//     }
+// });
+
+
+
+
+
+
+window.addEventListener("load", () => {
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    let user = JSON.parse(localStorage.getItem("user"));
+    let navbarm=document.querySelector(".navbarm")
+    let loginDiv = document.querySelector(".nv-login");
+    let loginDivm=navbarm.querySelector(".nv-login");
+    if (isLoggedIn==="true" && user){
+        loginDivm.innerHTML = `
+            <span style="color: gold;">👤</span>
+            <button onclick="logout()" style="margin-left:10px;">Logout</button>
+        `;
+    }
+
+    if(isLoggedIn === "true" && user){
+        loginDiv.innerHTML = `
+            <span style="color: gold;">👤 ${user.name}</span>
+            <button onclick="logout()" style="margin-left:10px;">Logout</button>
+        `;
+    }
+});
+
+// window.addEventListener("DOMContentLoaded", () => {
+
+//     let isLoggedIn = localStorage.getItem("isLoggedIn");
+//     let user = JSON.parse(localStorage.getItem("user"));
+
+//     let loginDivs = document.querySelectorAll(".nv-login");
+
+//     loginDivs.forEach(div => {
+
+//         if(isLoggedIn === "true" && user){
+//             div.innerHTML = `
+//                 <span class="user-name">👤 ${user.name}</span>
+//                 <button class="logout-btn" onclick="logout()">Logout</button>
+//             `;
+//         } else {
+//             div.innerHTML = `<a href="login.html">Sign in</a>`;
+//         }
+
+//     });
+// });
+
+
+function logout(){
+    localStorage.removeItem("isLoggedIn");
+    alert("Logged out!");
+    window.location.reload();
+}

@@ -1,0 +1,336 @@
+/* ===== RESTAURANT PAGE STYLES ===== */
+
+body {
+    background-color: rgb(253, 247, 235);
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== CATEGORY FILTER BUTTONS ===== */
+.filter-section {
+    text-align: center;
+    padding: 20px 10px 10px;
+}
+
+.filter-section h2 {
+    color: rgb(109, 5, 5);
+    text-shadow: 0px 0px 10px #ffc107;
+    margin-bottom: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border: 2px solid rgb(75, 15, 26);
+    border-radius: 30px;
+    background: white;
+    color: rgb(75, 15, 26);
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: radial-gradient(circle, rgba(120, 6, 6, 0.8), rgb(110, 3, 3));
+    color: gold;
+    border-color: gold;
+    transform: scale(1.05);
+}
+
+/* ===== SEARCH BAR ===== */
+.search-section {
+    text-align: center;
+    padding: 10px 20px 20px;
+}
+
+.search-section input {
+    width: 50%;
+    max-width: 500px;
+    padding: 12px 20px;
+    border: 2px solid rgba(75, 15, 26, 0.4);
+    border-radius: 30px;
+    font-size: medium;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-section input:focus {
+    border-color: rgb(75, 15, 26);
+    box-shadow: 0px 0px 8px rgba(75, 15, 26, 0.4);
+}
+
+.search-section input::placeholder {
+    color: rgb(149, 40, 13);
+}
+
+.search-section input:focus::placeholder {
+    color: transparent;
+}
+
+/* ===== MENU GRID ===== */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px 30px 40px;
+    animation: Fade 1s ease both;
+}
+
+/* ===== DISH CARD ===== */
+.dish-card {
+    width: 260px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px rgba(75, 15, 26, 0.4);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(75, 15, 26, 0.6);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Veg / Non-veg badge */
+.dish-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px 0;
+}
+
+.veg-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: small;
+    font-weight: bold;
+    border: 2px solid green;
+    color: green;
+    background: rgba(0, 128, 0, 0.08);
+}
+
+.nonveg-badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: small;
+    font-weight: bold;
+    border: 2px solid rgb(160, 20, 20);
+    color: rgb(160, 20, 20);
+    background: rgba(160, 20, 20, 0.08);
+}
+
+.spice-level {
+    font-size: small;
+    color: #888;
+}
+
+.dish-card h3 {
+    margin: 8px 12px 4px;
+    color: rgb(75, 15, 26);
+    font-size: medium;
+}
+
+.dish-card p {
+    margin: 0 12px 8px;
+    font-size: small;
+    color: #666;
+    flex-grow: 1;
+}
+
+.dish-card .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px 15px;
+    border-top: 1px solid rgba(75, 15, 26, 0.1);
+    margin-top: auto;
+}
+
+.dish-price {
+    font-size: large;
+    font-weight: bold;
+    color: rgb(110, 3, 3);
+}
+
+.add-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: radial-gradient(circle, rgba(120, 6, 6, 0.7), rgb(110, 3, 3));
+    color: gold;
+    font-weight: bold;
+    font-size: small;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: radial-gradient(circle, gold, goldenrod);
+    color: rgb(75, 15, 26);
+    transform: scale(1.05);
+}
+
+/* ===== CART SECTION ===== */
+.cart-section {
+    background: rgb(248, 236, 223);
+    border-top: 3px solid gold;
+    padding: 20px 30px;
+    text-align: center;
+    display: none; /* shown by JS when cart has items */
+}
+
+.cart-section h2 {
+    color: rgb(75, 15, 26);
+    margin-bottom: 10px;
+}
+
+.cart-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    background: white;
+    border: 1px solid rgba(75, 15, 26, 0.3);
+    border-radius: 10px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: small;
+}
+
+.cart-item .remove-btn {
+    background: none;
+    border: none;
+    color: rgb(160, 20, 20);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.cart-total {
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(75, 15, 26);
+    margin: 10px 0;
+}
+
+.order-btn {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(120, 6, 6, 0.8), rgb(110, 3, 3));
+    color: gold;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.order-btn:hover {
+    background: radial-gradient(circle, gold, goldenrod);
+    color: rgb(75, 15, 26);
+    transform: scale(1.04);
+}
+
+/* ===== NO RESULTS MESSAGE ===== */
+.no-results {
+    text-align: center;
+    color: rgb(110, 3, 3);
+    font-size: large;
+    padding: 30px;
+    width: 100%;
+    display: none;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+/* ===== DARK MODE ===== */
+body.dark .dish-card {
+    background: #350202;
+    color: white;
+}
+
+body.dark .dish-card h3 {
+    color: gold;
+}
+
+body.dark .dish-card p {
+    color: #ccc;
+}
+
+body.dark .search-section input {
+    background: #2a2a2a;
+    color: white;
+    border-color: #555;
+}
+
+body.dark .cart-section {
+    background: #1e0101;
+    color: white;
+}
+
+body.dark .cart-section h2 {
+    color: gold;
+}
+
+body.dark .cart-item {
+    background: #350202;
+    color: white;
+    border-color: #555;
+}
+
+body.dark .cart-total {
+    color: gold;
+}
+
+body.dark .filter-btn {
+    background: #350202;
+    color: gold;
+    border-color: gold;
+}
+
+body.dark .filter-btn.active,
+body.dark .filter-btn:hover {
+    background: gold;
+    color: rgb(75, 15, 26);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .search-section input {
+        width: 85%;
+    }
+
+    .dish-card {
+        width: 90%;
+    }
+}

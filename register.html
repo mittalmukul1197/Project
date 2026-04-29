@@ -174,22 +174,40 @@
         </div>
         <span class="error" id="termsError"></span>
 
-        <button type="submit" id="regbtn"> Register</button>
+        <button type="submit" id="regbtn" > Register</button>
 
         <p class="login-link">
             Already have an account?
             <a href="login.html">Sign In </a>
         </p>
-
+        
     </form>
-
+    
     
 
-
+    
     <footer class="footer">
         <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
     </footer>
-    <script>document.getElementById("registerForm").addEventListener("submit", function(e){
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    (function(){
+  emailjs.init("cmNJlkF5VfwUHc8c7");
+})();
+
+function sendEmail() {
+  emailjs.send("service_25qynek", "template_nnwqrn4", {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value
+  })
+  .then(() => alert("Email sent!"))
+  .catch(err => alert("Error: " + err));
+}
+    
+    
+    
+    
+    document.getElementById("registerForm").addEventListener("submit", function(e){
     e.preventDefault();
 
     let isValid = true;
@@ -273,9 +291,14 @@ if(phone.value.length <10){
 
     localStorage.setItem("user", JSON.stringify(user));
 
+    sendEmail();
     alert("Registered Successfully!");
     window.location.href = "login.html";
-});</script>
+});
+
+
+
+</script>
 <script src="index.js"></script>
 </body>
 
