@@ -106,7 +106,7 @@
 <div class="login">
 <form id ="logincard" id="loginForm">
         <div class="email"><label for="email">Email</label><br><br><input type="email" id="email" name="email" placeholder="Enter Your email"></div>
-          <div class="password"><label for="passowrd">Password</label><br><br><input type="password" id="passowrd" name="email" placeholder="Enter your password"></div>
+          <div class="password"><label for="passowrd">Password</label><br><br><input type="password" id="password" name="email" placeholder="Enter your password"></div>
 
         <div id="option">OR</div>
         <div class="phone"><label for="phone">Mobile Number</label><br><br><input type="text" name="contactno" id="phone" placeholder="Enter your number" >  </div>
@@ -122,33 +122,33 @@
     <footer class="footer">
     <p>&copy; 2026 Ramuli Luxury Hotel | All Rights Reserved | Made with &hearts; by Web Innovators</p>
 
-    </footer>
+</footer>
+<script src="index.js"></script>
     <script>
-
 document.getElementById("logincard").addEventListener("submit", function(e){
     e.preventDefault();
 
     let email = document.getElementById("email").value;
-    let password = document.getElementById("passowrd").value;
+    let password = document.getElementById("password").value;
 
     let savedUser = JSON.parse(localStorage.getItem("user"));
+    customealert("User Not Found !",{timeout:true,button:true,time:2000});
 
     if(!savedUser){
-        alert("No user found! Please register first.");
+        
         return;
     }
 
     if(email === savedUser.email && password === savedUser.password){
-        alert("Login Successful!");
+            customealert("Login Successfully !",{timeout:true,button:false,time:1000});
 
         // ✅ mark user as logged in
         localStorage.setItem("isLoggedIn", "true");
 
         window.location.href = "index.html";
     } else {
-        alert("Invalid email or password");
+        customealert("Invalid Email OR Password !!",{timeout:true,button:false,time:1000});
     }
 });
 </script>
-     <script src="index.js"></script>
 </html>

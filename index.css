@@ -724,7 +724,7 @@ body {
     font-style: normal;
     text-shadow: 0px 0px 5px rgba(163, 139, 19, 0.627);
     align-self: center;
-    height: 50px;
+    
     font-size: large;
 
 }
@@ -1146,3 +1146,130 @@ body.dark #scrollbtn {
     font-style: bold;
     background-color: rgba(252, 223, 59, 0.938);
 }
+
+
+
+
+.customealertbox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+    font-size: x-large;
+  background: rgb(255, 235, 207);
+  padding: 5px 10px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 300px;
+  animation: slideIn 0.3s ease;
+  color: brown;
+
+}
+
+.customealertbox button {
+  margin-top: 10px;
+  padding: 5px 10px;
+width: 70px;
+height: 30px;
+
+  border: none;
+  background: rgb(74, 1, 1);
+  color: rgb(247, 191, 112);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.customealertbox button:hover{
+    border: 2px solid gold;
+    padding: 5px 10px;
+
+}
+
+
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+
+@media (max-width:768px){
+ .customealertbox{
+    position: fixed;
+    /* transform: translate(-50%, -50%); */
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slidedown 0.3s ease forwards;
+    max-width: 250px;
+    width: 50%;
+    padding: 15px;
+    margin: 0;;
+    gap: 10px;
+    min-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  
+
+ } 
+ .customealertbox p{
+    margin: 0;
+    
+ }
+ @keyframes slidedown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);     
+    opacity: 1;
+  }
+}
+}
+
+
+.loggedin span{
+    background-color: gold;
+    color: #3e0101;
+width:  45px;
+height: 45px;
+font-size: 30px;
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius:50% ;
+}
+.loggedin{
+    display: flex;
+    justify-content: space-between;
+}
+
+.loggedin .logindropdown{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100px;
+    height: 500px;
+    top: 65px;
+    right: 20px;
+    z-index: 2;
+
+}
+.logindropdown a{
+     color: rgb(255, 217, 0);
+    text-decoration: none;
+    display: block;
+    font-size: 25px;
+}
+/* .logindropdown:hover{
+    display: flex;
+} */
+
+.loggedin:hover .logindropdown{
+    display: flex;
+}
+
